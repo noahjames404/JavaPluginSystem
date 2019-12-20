@@ -62,7 +62,7 @@ public class Main {
 		System.setSecurityManager(new SecurityManager());
 
 		File authorizedJarFile = new File("authorized.jar");
-		ClassLoader authorizedLoader = URLClassLoader.newInstance(new URL[] { authorizedJarFile.toURL() });
+		ClassLoader authorizedLoader = URLClassLoader.newInstance(new URL[] { authorizedJarFile.toURI.toURL() });
 		Plugin authorizedPlugin = (Plugin) authorizedLoader.loadClass("plugins.authorized.Authorized").newInstance();
 		authorizedPlugin.run();
 
